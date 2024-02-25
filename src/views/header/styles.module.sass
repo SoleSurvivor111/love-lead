@@ -1,0 +1,62 @@
+@import "../../styles/variables"
+@import "../../styles/mixins"
+
+.root
+  height: 118px
+  background: #FCF8FF
+  display: flex
+  justify-content: center
+  align-items: center
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  z-index: $zindex-fixed
+
+.content
+  width: 1200px
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+.logoBox
+  display: flex
+  gap: 10px
+  font-weight: 700
+  align-items: center
+  font-family: "Inter", sans-serif
+  text-transform: uppercase
+  color: #5C5698
+
+.startLearn
+  height: 44px
+  width: 160px
+  border-radius: 4px
+  background: #5C5698
+  font-size: 16px
+  color: #FCF8FF
+  display: flex
+  justify-content: center
+  align-items: center
+  border: none
+
+.nav
+  ul
+    display: flex
+    gap: 40px
+    list-style: none
+    font-size: 22px
+    font-weight: 500
+    color: #5C5698
+
+.link a
+  color: #5C5698
+  font-weight: 500
+  text-decoration: none
+
+.courseBox
+  display: flex
+  align-items: center
+  font-size: 22px
+  gap: 10px
+  color: #7B5266
