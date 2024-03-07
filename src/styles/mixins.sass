@@ -1,30 +1,69 @@
+@import "variables"
+
 // Media mixin for small screens
 @mixin media-sm
-  @media (min-width: $breakpoint-sm)
+  @media (max-width: $breakpoint-sm)
     @content
 
 // Media mixin for medium screens
 @mixin media-md
-  @media (min-width: $breakpoint-md)
+  @media (max-width: $breakpoint-md)
     @content
 
 // Media mixin for extra-large screens
 @mixin media-xl
-  @media (min-width: $breakpoint-xl)
+  @media (max-width: $breakpoint-xl)
     @content
 
 @mixin title
   font-size: 45px
   line-height: 52px
+  margin-bottom: 40px
+  @include media-sm
+    text-align: center
+    font-size: 36px
+    line-height: 44px
+    margin-bottom: 28px
 
 @mixin text-xl
   font-size: 32px
   line-height: 40px
+  @include media-sm
+    font-size: 16px
+    line-height: 20px
 
 @mixin text-md
   font-size: 22px
   line-height: 28px
+  @include media-sm
+    font-size: 14px
+    line-height: 20px
 
 @mixin text-sm
   font-size: 16px
   line-height: 24px
+  @include media-sm
+    font-size: 12px
+    line-height: 16px
+
+@mixin btn
+  background: #5c5698
+  width: 160px
+  height: 44px
+  cursor: pointer
+  color: #ffffff
+  border: none
+  border-radius: 4px
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out
+  &:hover
+    background: #735eab
+
+@mixin tg-link
+  font-family: 'Roboto',Arial,sans-serif
+  color: #5c5698
+  font-weight: 400
+  font-size: 22px
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out
+  &:hover
+    color: #3ba6ed
+

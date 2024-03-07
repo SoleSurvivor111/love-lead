@@ -1,0 +1,61 @@
+@import '../../styles/mixins'
+
+
+.content
+  display: flex
+  flex-direction: column
+
+
+.title
+  @include title
+  color: #5C5698
+  text-align: center
+
+.list
+  display: flex
+  gap: 60px
+  flex-wrap: wrap
+  justify-content: space-between
+  width: 100%
+  @include media-xl
+    flex-direction: column
+  @include media-sm
+    gap: 20px
+.item
+  display: flex
+  flex-direction: column
+  align-items: center
+  width: 250px
+  @include media-xl
+    width: 100%
+    flex-direction: row
+    align-items: flex-start
+    gap: 20px
+
+.icon
+  @include media-xl
+    min-width: 100px
+    min-height: 100px
+    max-height: 100px
+  @include media-sm
+    min-width: 70px
+    min-height: 70px
+    max-height: 70px
+
+
+.subtitle
+  @include text-xl
+  padding-top: 40px
+  padding-bottom: 20px
+  color: #5C5698
+  text-align: center
+  @include media-xl
+    padding-top: 0
+    text-align: left
+
+.description
+  @include text-md
+  color: #5E5C71
+  text-align: center
+  @include media-xl
+    text-align: left

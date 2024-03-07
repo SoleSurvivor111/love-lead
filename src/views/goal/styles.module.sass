@@ -15,13 +15,11 @@
   display: flex
   flex-direction: column
   align-items: center
-  align-items: center
+
 
 .title
   @include title
   color: #FFFFFF
-  margin-bottom: 40px
-
 
 .counterBox
   display: flex
@@ -47,3 +45,7 @@
   color: #FFFFFF
   position: absolute
   bottom: 30px
+  padding: 0 40px
+  text-align: center
+  @include media-sm
+    padding: 0 20px

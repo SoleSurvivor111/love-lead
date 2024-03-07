@@ -1,11 +1,12 @@
 import React from "react";
+import { Section } from "@components/section";
 
 import * as s from "./styles.module.sass";
 
 export const Goal = () => {
   return (
-    <section className={s.root}>
-      <div className={s.content}>
+    <Section rootClassName={s.root} contentClassName={s.content}>
+      <>
         <h1 className={s.title}>Счётчик соблазнения*</h1>
         <div className={s.counterBox}>
           <p className={s.counterValue}>
@@ -16,7 +17,7 @@ export const Goal = () => {
         <p className={s.goal}>
           Цель - тысяча отчетов о соблазнении в нашем чате #LL
         </p>
-      </div>
-    </section>
+      </>
+    </Section>
   );
 };

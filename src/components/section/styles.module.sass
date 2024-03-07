@@ -1,3 +1,5 @@
+@import '../../styles/mixins'
+
 .root
   display: flex
   align-items: center
@@ -6,3 +8,5 @@
 .content
   width: 1200px
   padding: 100px 40px
+  @include media-sm
+    padding: 50px 20px

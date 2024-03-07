@@ -1,0 +1,19 @@
+@import '../../styles/mixins'
+@import '../../styles/variables'
+
+.root
+  position: fixed
+  bottom: 50px
+  right: 50px
+  width: 60px
+  height: 60px
+  z-index: $zindex-fixed
+  border-radius: 50px
+  background-color: #5c5698
+  border-color: #ffffff
+  border-style: solid
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out
+  box-shadow: 0px 0px 0px 0px rgba(0,0,0,1)
+  cursor: pointer
+  &:hover
+    background: #735eab

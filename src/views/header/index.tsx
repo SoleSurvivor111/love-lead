@@ -12,7 +12,7 @@ export const Header = () => {
       <div className={s.content}>
         <div className={s.logoBox}>
           <LoveLeadLogoIcon />
-          <p>Love Lead</p>
+          <p>LOVE LEAD</p>
         </div>
         <div className={s.courseBox}>
           <HearthIcon />

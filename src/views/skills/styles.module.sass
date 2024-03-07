@@ -1,0 +1,42 @@
+@import '../../styles/mixins'
+
+.root
+  background: url(../../assets/images/skills-bg-1.png) no-repeat center,  url(../../assets/images/skills-bg-2.png) no-repeat center
+  background-size: cover
+.content
+  display: flex
+  flex-direction: column
+  align-items: center
+
+
+.title
+  @include title
+  color: #ffffff
+
+.list
+  display: flex
+  flex-direction: column
+  gap: 40px
+  align-items: center
+
+.item
+  display: flex
+  align-items: center
+  gap: 50px
+  @include media-sm
+    flex-direction: column
+    gap: 30px
+
+.textBox
+  max-width: 500px
+
+
+.subtitle
+  @include text-xl
+  color: #E4DFFF
+  @include media-sm
+    text-align: center
+
+.description
+  @include text-sm
+  color: #C5C0FF

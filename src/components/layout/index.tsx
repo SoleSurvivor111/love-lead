@@ -1,5 +1,6 @@
-import { Header } from "@views/header";
 import React from "react";
+import { Header } from "@views/header";
+import { ScrollUpBtn } from "@components/scroll-up-btn";
 
 import * as s from "./styles.module.sass";
 
@@ -12,6 +13,7 @@ export const Layout = ({ children }: ILayoutProps) => {
     <div className={s.root}>
       <Header />
       <main>{children}</main>
+      <ScrollUpBtn />
     </div>
   );
 };
