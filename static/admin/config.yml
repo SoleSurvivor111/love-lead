@@ -1,14 +1,22 @@
 backend:
-  name: git-gateway
-  branch: main # Branch to update (optional; defaults to master)
+  name: github
+  repo: SoleSurvivor111/love-lead-site
+  branch: master
+  commit_messages:
+  create: "Create {{collection}} “{{slug}}”"
+  update: "Update {{collection}} “{{slug}}”"
+  delete: "Delete {{collection}} “{{slug}}”"
+  uploadMedia: "[skip ci] Upload “{{path}}”"
+  deleteMedia: "[skip ci] Delete “{{path}}”"
 
+local_backend: true
 media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: 'blog'
-    label: 'Blog'
-    folder: 'content/blog'
+  - name: 'report'
+    label: 'Report'
+    folder: 'content/report'
     create: true
     slug: 'index'
     media_folder: ''
@@ -17,7 +25,5 @@ collections:
     editor:
       preview: false
     fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Description', name: 'description', widget: 'string' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'alt', name: 'description', widget: 'string' }
+      - { label: 'Image', name: 'image', widget: 'image' }
