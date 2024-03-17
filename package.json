@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "clsx": "^2.1.0",
-    "decap-cms-app": "^3.1.2",
+    "decap-cms-app": "^3.1.3",
     "gatsby": "^5.13.2",
     "gatsby-omni-font-loader": "^2.0.2",
     "gatsby-plugin-decap-cms": "^4.0.4",

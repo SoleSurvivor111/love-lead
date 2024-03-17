@@ -28,7 +28,7 @@ export const ReportGallery = () => {
             {gallery.map(({ id, alt }) => (
               <StaticImage
                 key={id}
-                src={"../../assets/images/reports/report-photo-2.jpeg"}
+                src={"../../assets/images/fear.png"}
                 alt={alt}
                 height={550}
                 width={860}
