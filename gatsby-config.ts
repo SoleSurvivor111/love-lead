@@ -1,9 +1,10 @@
 import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
+  pathPrefix: "/love-lead",
   siteMetadata: {
-    title: `love-lead-site`,
-    siteUrl: `https://www.yourdomain.tld`,
+    title: `love-lead`,
+    siteUrl: `https://solesurvivor111.github.io/love-lead/`,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
@@ -27,7 +28,7 @@ const config: GatsbyConfig = {
       options: {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.
         trackingIds: [
-          "GA-TRACKING_ID", // Google Analytics / GA
+          "G-H5LX9FD2KY", // Google Analytics / GA
           "AW-CONVERSION_ID", // Google Ads / Adwords / AW
           "DC-FLOODIGHT_ID", // Marketing Platform advertising products (Display & Video 360, Search Ads 360, and Campaign Manager)
         ],
@@ -63,14 +64,6 @@ const config: GatsbyConfig = {
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
-      // keep as first gatsby-source-filesystem plugin for gatsby image support
-      resolve: "gatsby-source-filesystem",
-      options: {
-        path: `${__dirname}/static/img`,
-        name: "uploads",
-      },
-    },
-    {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "pages",
@@ -96,6 +89,23 @@ const config: GatsbyConfig = {
             file: `https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap`,
           },
         ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-yandex-metrika`,
+      options: {
+        // The ID of yandex metrika.
+        trackingId: process.env.GATSBY_YANDEX_METRIKA_ID,
+        // Enabled a webvisor. The default value is `false`.
+        webvisor: true,
+        // Enables tracking a hash in URL. The default value is `false`.
+        trackHash: true,
+        // Defines where to place the tracking script - `false` means before body (slower loading, more hits)
+        // and `true` means after the body (faster loading, less hits). The default value is `false`.
+        afterBody: true,
+        // Use `defer` attribute of metrika script. If set to `false` - script will be loaded with `async` attribute.
+        // Async enables earlier loading of the metrika but it can negatively affect page loading speed. The default value is `false`.
+        defer: false,
       },
     },
   ],

@@ -9,9 +9,11 @@ export const Guide = () => {
     <Section contentClassName={s.content}>
       <>
         <h1 className={s.title}>
-          Как соблазнить
-          <br />
-          девушку?
+          <b>
+            Как соблазнить
+            <br />
+            девушку?
+          </b>
         </h1>
         <StaticImage
           src="../../assets/images/pickup-truck-guide.png"

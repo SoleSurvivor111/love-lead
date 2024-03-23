@@ -10,8 +10,18 @@ interface ISliderProps {
 export const Slider: React.FC<ISliderProps> = ({ children }) => {
   return (
     <Carousel
-      renderCenterLeftControls={() => <ArrowLeftIcon />}
-      renderCenterRightControls={() => <ArrowRightIcon />}
+      renderCenterLeftControls={({ previousSlide }) => (
+        <ArrowLeftIcon
+          onClick={() => previousSlide()}
+          style={{ cursor: "pointer" }}
+        />
+      )}
+      renderCenterRightControls={({ nextSlide }) => (
+        <ArrowRightIcon
+          onClick={() => nextSlide()}
+          style={{ cursor: "pointer" }}
+        />
+      )}
     >
       {children}
     </Carousel>

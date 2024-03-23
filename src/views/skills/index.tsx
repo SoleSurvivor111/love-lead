@@ -34,7 +34,9 @@ export const Skills = () => {
               height={158}
             />
             <div className={s.textBox}>
-              <h2 className={s.subtitle}>Флирту с девушками</h2>
+              <h2 className={s.subtitle}>
+                <b>Флирту с девушками</b>
+              </h2>
               <p className={s.description}>
                 Мы научим тебя эмоционально и интересно общаться с ними.
                 Девушкам никогда не будет с тобой скучно.
