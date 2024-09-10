@@ -10,6 +10,7 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
         "@assets": path.resolve(__dirname, "src/assets"),
         "@views": path.resolve(__dirname, "src/views"),
         "@constants": path.resolve(__dirname, "src/constants"),
+        "@hooks": path.resolve(__dirname, "src/hooks"),
       },
     },
   });

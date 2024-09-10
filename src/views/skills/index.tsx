@@ -3,59 +3,69 @@ import { Section } from "@components/section";
 import { StaticImage } from "gatsby-plugin-image";
 
 import * as s from "./styles.module.sass";
+import { useTranslation } from "react-i18next";
 
 export const Skills = () => {
+  const { t } = useTranslation();
   return (
     <Section rootClassName={s.root} contentClassName={s.content}>
       <>
-        <h1 className={s.title}>Чему ты научишься</h1>
+        <h1 className={s.title}>{t("Чему ты научишься")}</h1>
         <ul className={s.list}>
           <li className={s.item}>
             <StaticImage
+              className={s.img}
               src="../../assets/images/fear.png"
-              alt="страх подхода"
-              width={257}
-              height={158}
-            />
-            <div className={s.textBox}>
-              <h2 className={s.subtitle}>Избавишься от страха подхода</h2>
-              <p className={s.description}>
-                Избавишься от страха красивых женщин с помощью психологических
-                технологий. Что позволит тебе подходить к девушкам знакомиться и
-                не испытывать негативных чувств.
-              </p>
-            </div>
-          </li>
-          <li className={s.item}>
-            <StaticImage
-              src="../../assets/images/flirt.png"
-              alt="страх подхода"
+              alt={t("страх подхода")}
               width={257}
               height={158}
             />
             <div className={s.textBox}>
               <h2 className={s.subtitle}>
-                <b>Флирту с девушками</b>
+                {t("Избавишься от страха подхода")}
               </h2>
               <p className={s.description}>
-                Мы научим тебя эмоционально и интересно общаться с ними.
-                Девушкам никогда не будет с тобой скучно.
+                {t(
+                  "Избавишься от страха красивых женщин с помощью психологических технологий. Что позволит тебе подходить к девушкам знакомиться и не испытывать негативных чувств."
+                )}
               </p>
             </div>
           </li>
           <li className={s.item}>
             <StaticImage
-              src="../../assets/images/state.png"
-              alt="страх подхода"
+              className={s.img}
+              src="../../assets/images/flirt.png"
+              alt={t("флирт")}
               width={257}
               height={158}
             />
             <div className={s.textBox}>
-              <h2 className={s.subtitle}>Внутреннему состоянию и поведению</h2>
+              <h2 className={s.subtitle}>
+                <b>{t("Флирту с девушками")}</b>
+              </h2>
               <p className={s.description}>
-                Правильный настрой притягивает женщин, как магнит. Круто быть
-                привлекательным не только, когда ты используешь какую то
-                методику. А везде, где ты просто находишься.
+                {t(
+                  "Флирту с девушками позволит понять, что именно делают женщины и они будут рады тебе."
+                )}
+              </p>
+            </div>
+          </li>
+          <li className={s.item}>
+            <StaticImage
+              className={s.img}
+              src="../../assets/images/state.png"
+              alt={t("состояние")}
+              width={257}
+              height={158}
+            />
+            <div className={s.textBox}>
+              <h2 className={s.subtitle}>
+                {t("Внутреннему состоянию и поведению")}
+              </h2>
+              <p className={s.description}>
+                {t(
+                  "Внутреннему состоянию и поведению девушек позволят понять, что делают и они будут рады тебе."
+                )}
               </p>
             </div>
           </li>

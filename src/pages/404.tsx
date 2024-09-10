@@ -1,5 +1,7 @@
 import * as React from "react";
-import { Link, HeadFC, PageProps } from "gatsby";
+import { Link, HeadFC, PageProps, graphql } from "gatsby";
+import { Trans, useTranslation } from "react-i18next";
+import useHeadTranslation from "@hooks/use-head-transition";
 
 const pageStyles = {
   color: "#232129",
@@ -24,21 +26,23 @@ const codeStyles = {
 };
 
 const NotFoundPage: React.FC<PageProps> = () => {
+  const { t } = useTranslation();
   return (
     <main style={pageStyles}>
-      <h1 style={headingStyles}>Page not found</h1>
+      <h1 style={headingStyles}>{t("Страница не найдена")}</h1>
       <p style={paragraphStyles}>
-        Sorry 😔, we couldn’t find what you were looking for.
+        {t("Извините 😔, мы не смогли найти то, что вы искали.")}
         <br />
         {process.env.NODE_ENV === "development" ? (
-          <>
+          <Trans>
             <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
+            Попробуйте создать страницу в{" "}
+            <code style={codeStyles}>src/pages/</code>.
             <br />
-          </>
+          </Trans>
         ) : null}
         <br />
-        <Link to="/">Go home</Link>.
+        <Link to="/">{t("На главную")}</Link>.
       </p>
     </main>
   );
@@ -46,4 +50,22 @@ const NotFoundPage: React.FC<PageProps> = () => {
 
 export default NotFoundPage;
 
-export const Head: HeadFC = () => <title>Not found</title>;
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;
+
+export const Head: HeadFC = ({ data }: any) => {
+  const { t } = useHeadTranslation(data);
+
+  return <title>{t("Страница не найдена")}</title>;
+};

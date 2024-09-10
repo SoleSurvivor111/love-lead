@@ -3,17 +3,21 @@ import { StaticImage } from "gatsby-plugin-image";
 import { Section } from "@components/section";
 
 import * as s from "./styles.module.sass";
+import { Trans, useTranslation } from "react-i18next";
 
 export const Guide = () => {
+  const { t } = useTranslation();
   return (
-    <Section contentClassName={s.content}>
+    <Section id="book" contentClassName={s.content}>
       <>
         <h1 className={s.title}>
-          <b>
-            Как соблазнить
-            <br />
-            девушку?
-          </b>
+          <Trans>
+            <b>
+              Как соблазнить
+              <br />
+              девушку?
+            </b>
+          </Trans>
         </h1>
         <StaticImage
           src="../../assets/images/pickup-truck-guide.png"
@@ -27,7 +31,7 @@ export const Guide = () => {
           rel="noopener"
           className="tg-link"
         >
-          Забирай книгу бесплатно
+          {t("Забирай книгу бесплатно")}
         </a>
       </>
     </Section>

@@ -5,8 +5,10 @@ import TelegramIcon from "@assets/icons/telegram.svg";
 import { LINKS } from "@constants";
 
 import * as s from "./styles.module.sass";
+import { useTranslation } from "react-i18next";
 
 export const Footer = () => {
+  const { t } = useTranslation();
   return (
     <footer className={s.root}>
       <div className={s.content}>
@@ -17,7 +19,7 @@ export const Footer = () => {
           </li>
           <li className={s.item}>
             <a className={s.link} href={LINKS.loveLeadChat}>
-              Наш группа
+              {t("Наша группа")}
             </a>
             <TelegramIcon />
           </li>
@@ -27,10 +29,10 @@ export const Footer = () => {
           <a
             href={LINKS.designer}
             target="_blank"
-            rel="noopener"
+            rel="noreferrer"
             className={s.designerLink}
           >
-            design by Yuri S
+            {t("дизайн Юрия С.")}
           </a>
         </div>
       </div>

@@ -11,6 +11,45 @@ const config: GatsbyConfig = {
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
   plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/locales`,
+        name: `locale`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-react-i18next`,
+      options: {
+        localeJsonSourceName: `locale`, // name given to `gatsby-source-filesystem` plugin.
+        languages: [`ru`, `en`],
+        defaultLanguage: `ru`,
+        siteUrl: `https://example.com`,
+        // if you are using trailingSlash gatsby config include it here, as well (the default is 'always')
+        trailingSlash: "always",
+        // you can pass any i18next options
+        generateDefaultLanguagePage: true,
+        i18nextOptions: {
+          interpolation: {
+            escapeValue: false, // not needed for react as it escapes by default
+          },
+          keySeparator: false,
+          nsSeparator: false,
+        },
+        pages: [
+          // {
+          //   matchPath: "/:lang?/blog/:uid",
+          //   getLanguageFromPath: true,
+          //   excludeLanguages: ["es"],
+          // },
+          // {
+          //   matchPath: "/preview",
+          //   languages: ["en"],
+          // },
+        ],
+      },
+    },
+
     "gatsby-plugin-decap-cms",
     "gatsby-plugin-sass",
     "gatsby-plugin-image",

@@ -5,6 +5,7 @@ import PersonalExampleIcon from "@assets/icons/personal-example.svg";
 import OpennessIcon from "@assets/icons/openness.svg";
 
 import * as s from "./styles.module.sass";
+import { useTranslation } from "react-i18next";
 
 const peculiarities = [
   {
@@ -28,10 +29,11 @@ const peculiarities = [
 ];
 
 export const Peculiarities = () => {
+  const { t } = useTranslation();
   return (
     <Section contentClassName={s.content}>
       <>
-        <h1 className={s.title}>Особенности нашего подхода</h1>
+        <h1 className={s.title}>{t("Особенности нашего подхода")}</h1>
         <ul className={s.list}>
           {peculiarities.map(({ title, description, Icon }) => (
             <li key={title} className={s.item}>

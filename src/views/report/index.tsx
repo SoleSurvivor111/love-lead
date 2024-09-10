@@ -2,8 +2,10 @@ import React, { useEffect, useRef } from "react";
 
 import * as s from "./styles.module.sass";
 import { Section } from "@components/section";
+import { useTranslation } from "react-i18next";
 
 export const Report = () => {
+  const { t } = useTranslation();
   const telegramPostRef = useRef<HTMLDivElement>(null);
   const telegramCommentsRef = useRef<HTMLDivElement>(null);
 
@@ -39,7 +41,7 @@ export const Report = () => {
   return (
     <Section rootClassName={s.root} contentClassName={s.content}>
       <>
-        <h1 className={s.title}>Отчет месяца</h1>
+        <h1 className={s.title}>{t("Отчет месяца")}</h1>
         <div className={s.postBox}>
           <div className={s.postContent}>
             <div className={s.post}>

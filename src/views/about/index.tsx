@@ -3,30 +3,24 @@ import { StaticImage } from "gatsby-plugin-image";
 import { Section } from "@components/section";
 
 import * as s from "./styles.module.sass";
+import { useTranslation } from "gatsby-plugin-react-i18next";
 
 export const About = () => {
+  const { t } = useTranslation();
   return (
     <Section contentClassName={s.content}>
       <>
-        <h1 className={s.title}>О проекте</h1>
+        <h1 className={s.title}>{t("О проекте")}</h1>
         <div className={s.aboutBox}>
           <p className={s.description}>
-            Привет! Я&nbsp;&mdash; Георгий(LL), основатель проекта Love
-            Lead.&nbsp;15&nbsp;лет в&nbsp;теме пикапа, мастер в&nbsp;соблазнении
-            и&nbsp;отношениях. В&nbsp;своем подходе опираюсь на&nbsp;научный
-            метод и&nbsp;практический опыт. Обучил сотни парней и&nbsp;продолжаю
-            это делать каждый день.{" "}
-            <strong>
-              Главный принцип проекта&nbsp;&mdash; эффективный минимализм:
-              не&nbsp;делать&nbsp;то, что не&nbsp;ведет к&nbsp;цели. Или, как
-              говорю я&nbsp;&mdash; бить сразу в&nbsp;сердце.
-            </strong>{" "}
-            Вливайся в&nbsp;тусовку!
+            {t(
+              "Привет! Я – Георгий(LL), основатель проекта Love Lead. 15 лет в теме пикапа, мастер в соблазнении и отношениях. В своем подходе опираюсь на научный метод и практический опыт. Обучил сотни парней и продолжаю это делать каждый день. Главный принцип проекта - эффективный минимализм: не делать то, что не ведет к цели. Или, как говорю я - бить сразу в сердце. Вливайся в тусовку!"
+            )}
           </p>
           <StaticImage
             class={s.creatorAvatar}
             src="../../assets/images/love-lead-creator.png"
-            alt="Создатель проекта Love Lead Георгий(LL)"
+            alt={t("Создатель проекта Love Lead Георгий(LL)")}
           />
         </div>
       </>
