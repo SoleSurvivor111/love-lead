@@ -45,8 +45,7 @@
     "react-helmet": "^6.1.0",
     "react-i18next": "^15.0.1",
     "reset-css": "^5.0.2",
-    "sass": "^1.71.0",
-    "translation-check": "^1.1.0"
+    "sass": "^1.71.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.25.6",

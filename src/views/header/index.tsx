@@ -7,7 +7,6 @@ import * as s from "./styles.module.sass";
 import { LINKS } from "@constants";
 import { LanguageDropdown } from "@components/language-dropdown";
 import { useTranslation } from "react-i18next";
-import { ShowTranslationBtn } from "@components/show-translation-btn";
 
 export const Header = () => {
   const { t } = useTranslation();
@@ -40,7 +39,6 @@ export const Header = () => {
         </nav>
         <div className={s.languageDropdown}>
           <LanguageDropdown />
-          {process.env.NODE_ENV === "development" && <ShowTranslationBtn />}
         </div>
       </div>
     </header>
