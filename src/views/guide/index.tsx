@@ -1,12 +1,12 @@
-import React from "react";
-import { StaticImage } from "gatsby-plugin-image";
-import { Section } from "@components/section";
+import { Section } from '@components/section'
+import { StaticImage } from 'gatsby-plugin-image'
+import React from 'react'
 
-import * as s from "./styles.module.sass";
-import { Trans, useTranslation } from "react-i18next";
+import { Trans, useTranslation } from 'react-i18next'
+import * as s from './styles.module.sass'
 
 export const Guide = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
   return (
     <Section id="book" contentClassName={s.content}>
       <>
@@ -20,7 +20,7 @@ export const Guide = () => {
           </Trans>
         </h1>
         <StaticImage
-          src="../../assets/images/pickup-truck-guide.png"
+          src="../../assets/images/manual.png"
           alt="гайд"
           width={760}
           height={566}
@@ -31,9 +31,9 @@ export const Guide = () => {
           rel="noopener"
           className="tg-link"
         >
-          {t("Забирай книгу бесплатно")}
+          {t('Забирай книгу бесплатно')}
         </a>
       </>
     </Section>
-  );
-};
+  )
+}

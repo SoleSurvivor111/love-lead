@@ -1,14 +1,14 @@
-import React from "react";
-import LoveLeadLogoIcon from "@assets/icons/love-lead-logo.svg";
-import TelegramIcon from "@assets/icons/telegram.svg";
+import { ReactComponent as LoveLeadLogoIcon } from '@assets/icons/love-lead-logo.svg'
+import { ReactComponent as TelegramIcon } from '@assets/icons/telegram.svg'
+import React from 'react'
 
-import { LINKS } from "@constants";
+import { LINKS } from '@constants'
 
-import * as s from "./styles.module.sass";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from 'react-i18next'
+import * as s from './styles.module.sass'
 
 export const Footer = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
   return (
     <footer className={s.root}>
       <div className={s.content}>
@@ -19,7 +19,7 @@ export const Footer = () => {
           </li>
           <li className={s.item}>
             <a className={s.link} href={LINKS.loveLeadChat}>
-              {t("Наша группа")}
+              {t('Наша группа')}
             </a>
             <TelegramIcon />
           </li>
@@ -32,10 +32,10 @@ export const Footer = () => {
             rel="noreferrer"
             className={s.designerLink}
           >
-            {t("дизайн Юрия С.")}
+            {t('дизайн Юрия С.')}
           </a>
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}

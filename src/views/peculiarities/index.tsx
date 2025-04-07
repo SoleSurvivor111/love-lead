@@ -1,41 +1,45 @@
-import React from "react";
-import { Section } from "@components/section";
-import ScienceIcon from "@assets/icons/science.svg";
-import PersonalExampleIcon from "@assets/icons/personal-example.svg";
-import OpennessIcon from "@assets/icons/openness.svg";
+import { ReactComponent as OpennessIcon } from '@assets/icons/openness.svg'
+import { ReactComponent as PersonalExampleIcon } from '@assets/icons/personal-example.svg'
+import { ReactComponent as ScienceIcon } from '@assets/icons/science.svg'
+import { Section } from '@components/section'
+import React from 'react'
+import { useTranslation } from 'react-i18next'
 
-import * as s from "./styles.module.sass";
-import { useTranslation } from "react-i18next";
+import * as s from './styles.module.sass'
 
-const peculiarities = [
+const peculiarities = (t: (key: string) => string) => [
   {
     Icon: ScienceIcon,
-    title: "По науке",
-    description:
-      "В основе научные факты, а не домыслы в области эволюции, размножения, отношений",
+    title: t('По науке'),
+    description: t(
+      'В основе научные факты, а не домыслы в области эволюции, размножения, отношений'
+    ),
   },
   {
     Icon: PersonalExampleIcon,
-    title: "Личный пример",
-    description:
-      "Все, чему мы учим, демонстрируем лично на тренингах в поле и в переписках с девушками",
+    title: t('Личный пример'),
+    description: t(
+      'Все, чему мы учим, демонстрируем лично на тренингах в поле и в переписках с девушками'
+    ),
   },
   {
     Icon: OpennessIcon,
-    title: "Открытость",
-    description:
-      "Всегда на связи и отвечаем всем. Любим дискуссии и аргументировано поспорить",
+    title: t('Открытость'),
+    description: t(
+      'Всегда на связи и отвечаем всем. Любим дискуссии и аргументировано поспорить'
+    ),
   },
-];
+]
 
 export const Peculiarities = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
+
   return (
     <Section contentClassName={s.content}>
       <>
-        <h1 className={s.title}>{t("Особенности нашего подхода")}</h1>
+        <h1 className={s.title}>{t('Особенности нашего подхода')}</h1>
         <ul className={s.list}>
-          {peculiarities.map(({ title, description, Icon }) => (
+          {peculiarities(t).map(({ title, description, Icon }) => (
             <li key={title} className={s.item}>
               <Icon className={s.icon} />
               <div>
@@ -47,5 +51,5 @@ export const Peculiarities = () => {
         </ul>
       </>
     </Section>
-  );
-};
+  )
+}

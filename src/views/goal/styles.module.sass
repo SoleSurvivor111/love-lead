@@ -6,9 +6,11 @@
   display: flex
   justify-content: center
   align-items: center
-  background: linear-gradient(198deg, rgba(57,49,133,0.47102591036414565) 0%, rgba(34,119,217,0.4150035014005602) 100%),  url(../../assets/images/goal-bg.jpeg) no-repeat center
   background-size: cover
   position: relative
+  background: linear-gradient(198deg, rgba(57,49,133,0.47102591036414565) 0%, rgba(34,119,217,0.4150035014005602) 100%)
+
+
 
 .content
   width: 760px
@@ -20,6 +22,7 @@
 .title
   @include title
   color: #FFFFFF
+  z-index: 1
 
 .counterBox
   display: flex
@@ -28,12 +31,15 @@
   justify-content: center
   width: 100%
   background: linear-gradient(90deg, transparent, #000000 50%, transparent 100%)
+  z-index: 1
+
 
 .counterValue
   font-size: 57px
   line-height: 64px
   color: #FFFFFF
   line-height: 52px
+  z-index: 1
   span
     color: #5e5c71
 
@@ -47,5 +53,6 @@
   bottom: 30px
   padding: 0 40px
   text-align: center
+  z-index: 1
   @include media-sm
     padding: 0 20px

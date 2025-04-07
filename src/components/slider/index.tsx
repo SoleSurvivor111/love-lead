@@ -1,10 +1,10 @@
-import React, { ReactElement } from "react";
-import Carousel from "nuka-carousel";
-import ArrowLeftIcon from "@assets/icons/arrow-left.svg";
-import ArrowRightIcon from "@assets/icons/arrow-right.svg";
+import { ReactComponent as ArrowLeftIcon } from '@assets/icons/arrow-left.svg'
+import { ReactComponent as ArrowRightIcon } from '@assets/icons/arrow-right.svg'
+import Carousel from 'nuka-carousel'
+import React, { ReactElement } from 'react'
 
 interface ISliderProps {
-  children: ReactElement[];
+  children: ReactElement[]
 }
 
 export const Slider: React.FC<ISliderProps> = ({ children }) => {
@@ -13,17 +13,17 @@ export const Slider: React.FC<ISliderProps> = ({ children }) => {
       renderCenterLeftControls={({ previousSlide }) => (
         <ArrowLeftIcon
           onClick={() => previousSlide()}
-          style={{ cursor: "pointer" }}
+          style={{ cursor: 'pointer' }}
         />
       )}
       renderCenterRightControls={({ nextSlide }) => (
         <ArrowRightIcon
           onClick={() => nextSlide()}
-          style={{ cursor: "pointer" }}
+          style={{ cursor: 'pointer' }}
         />
       )}
     >
       {children}
     </Carousel>
-  );
-};
+  )
+}

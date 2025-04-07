@@ -1,9 +1,9 @@
-declare module "*.svg" {
-  const content: any;
-  export default content;
+declare module '*.svg' {
+  import { FC, SVGProps } from 'react'
+  export const ReactComponent: FC<SVGProps<SVGElement>>
 }
 
-declare module "*.sass" {
-  const content: { [className: string]: string };
-  export = content;
+declare module '*.sass' {
+  const content: { [className: string]: string }
+  export = content
 }

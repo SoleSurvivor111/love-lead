@@ -1,19 +1,19 @@
-import * as React from "react";
-import { graphql } from "gatsby";
-import type { HeadFC, HeadProps, PageProps } from "gatsby";
-import { Layout } from "@components/layout";
-import { Goal } from "@views/goal";
-import { Report } from "@views/report";
-import { About } from "@views/about";
-import { Phrase } from "@views/phrase";
-import { ReportGallery } from "@views/reports-gallery";
-import { Peculiarities } from "@views/peculiarities";
-import { Skills } from "@views/skills";
-import { Guide } from "@views/guide";
-import { Footer } from "@views/footer";
-import { Team } from "@views/team";
-import { Trans } from "react-i18next";
-import useHeadTranslation from "@hooks/use-head-transition";
+import { Layout } from '@components/layout'
+import useHeadTranslation from '@hooks/use-head-transition'
+import { About } from '@views/about'
+import { Footer } from '@views/footer'
+import { Goal } from '@views/goal'
+import { Guide } from '@views/guide'
+import { Peculiarities } from '@views/peculiarities'
+import { Phrase } from '@views/phrase'
+import { Report } from '@views/report'
+import { ReportGallery } from '@views/reports-gallery'
+import { Skills } from '@views/skills'
+import { Team } from '@views/team'
+import type { HeadFC, PageProps } from 'gatsby'
+import { graphql } from 'gatsby'
+import * as React from 'react'
+import { Trans } from 'react-i18next'
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
@@ -43,10 +43,10 @@ const IndexPage: React.FC<PageProps> = () => {
       </Phrase>
       <Footer />
     </Layout>
-  );
-};
+  )
+}
 
-export default IndexPage;
+export default IndexPage
 
 export const query = graphql`
   query ($language: String!) {
@@ -60,15 +60,15 @@ export const query = graphql`
       }
     }
   }
-`;
+`
 
 export const Head: HeadFC = ({ data, pageContext }: any) => {
-  const { t } = useHeadTranslation(data);
-  debugger;
+  const { t } = useHeadTranslation(data)
+
   return (
     <>
       <html lang={pageContext.language} />
-      <title>{t("Love Lead|Пикап")}</title>;
+      <title>{t('Love Lead|Пикап')}</title>;
     </>
-  );
-};
+  )
+}

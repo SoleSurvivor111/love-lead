@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "gatsby develop",
     "start": "gatsby develop",
-    "build": "gatsby build",
+    "build": "gatsby build --prefix-paths",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "extract": "yarn run babel --config-file ./babel-extract.config.js -o tmp/chunk.js 'src/**/*.{js,jsx,ts,tsx}' && rm -rf tmp",
@@ -18,9 +18,13 @@
     "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "dependencies": {
+    "@svgr/webpack": "^8.1.0",
+    "@typescript-eslint/eslint-plugin": "^8.14.0",
+    "@typescript-eslint/parser": "^8.14.0",
     "animejs": "^3.2.2",
     "clsx": "^2.1.0",
     "decap-cms-app": "^3.1.3",
+    "eslint-plugin-prettier": "^5.2.1",
     "gatsby": "^5.13.2",
     "gatsby-omni-font-loader": "^2.0.2",
     "gatsby-plugin-decap-cms": "^4.0.4",
@@ -28,10 +32,10 @@
     "gatsby-plugin-image": "^3.13.1",
     "gatsby-plugin-manifest": "^5.13.1",
     "gatsby-plugin-react-i18next": "^3.0.1",
-    "gatsby-plugin-react-svg": "^3.3.0",
     "gatsby-plugin-sass": "^6.13.1",
     "gatsby-plugin-sharp": "^5.13.1",
     "gatsby-plugin-sitemap": "^6.13.1",
+    "gatsby-plugin-svgr": "^3.0.0-beta.0",
     "gatsby-plugin-yandex-metrika": "^2.5.0",
     "gatsby-source-filesystem": "^5.13.1",
     "gatsby-transformer-remark": "^6.13.1",
@@ -44,8 +48,7 @@
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "react-i18next": "^15.0.1",
-    "reset-css": "^5.0.2",
-    "sass": "^1.71.0"
+    "reset-css": "^5.0.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.25.6",
@@ -56,6 +59,10 @@
     "@types/react-dom": "^18.2.18",
     "babel-plugin-i18next-extract": "^0.10.0",
     "babel-preset-gatsby": "^3.13.2",
+    "eslint": "^9.10.0",
+    "prettier": "^3.3.3",
+    "prettier-plugin-organize-imports": "^4.1.0",
+    "sass": "1.77.6",
     "typescript": "^5.3.3"
   }
 }

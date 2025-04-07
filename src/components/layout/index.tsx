@@ -1,20 +1,20 @@
-import React from "react";
+import React from 'react'
 
-import { Header } from "@views/header";
-import { ScrollUpBtn } from "@components/scroll-up-btn";
-import { useMediaQuery } from "@hooks/useMediaQuery";
+import { ScrollUpBtn } from '@components/scroll-up-btn'
+import { useMediaQuery } from '@hooks/useMediaQuery'
+import { Header } from '@views/header'
 
-import { MobileHeader } from "@views/mobile-header";
+import { MobileHeader } from '@views/mobile-header'
 
-import * as s from "./styles.module.sass";
-import clsx from "clsx";
+import clsx from 'clsx'
+import * as s from './styles.module.sass'
 
 interface ILayoutProps {
-  children: any;
+  children: any
 }
 
 export const Layout = ({ children }: ILayoutProps) => {
-  const isMobile = useMediaQuery("max-width: 768px");
+  const isMobile = useMediaQuery('(max-width: 768px)')
 
   return (
     <div className={clsx(s.root, { mobile: isMobile })}>
@@ -22,5 +22,5 @@ export const Layout = ({ children }: ILayoutProps) => {
       <main>{children}</main>
       <ScrollUpBtn />
     </div>
-  );
-};
+  )
+}

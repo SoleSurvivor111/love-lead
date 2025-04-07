@@ -16,16 +16,6 @@ export const ReportGallery = () => {
           <Slider>
             <div className={s.slide}>
               <StaticImage
-                src={"../../assets/images/reports/1.jpeg"}
-                alt={t(
-                  "встреча участников пикап марафона 2023 лето в Санкт-Петербурга пикап проекта «Love Lead»"
-                )}
-                height={550}
-                width={860}
-              />
-            </div>
-            <div className={s.slide}>
-              <StaticImage
                 src={"../../assets/images/reports/2.jpg"}
                 alt={t(
                   "Клубная игра от Пикап тренера Августе в Челябинске пикап проекта «Love Lead»"

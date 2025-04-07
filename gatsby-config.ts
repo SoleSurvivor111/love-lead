@@ -1,7 +1,7 @@
-import type { GatsbyConfig } from "gatsby";
+import type { GatsbyConfig } from 'gatsby'
 
 const config: GatsbyConfig = {
-  pathPrefix: "/love-lead",
+  pathPrefix: '/love-lead',
   siteMetadata: {
     title: `love-lead`,
     siteUrl: `https://solesurvivor111.github.io/love-lead/`,
@@ -26,7 +26,7 @@ const config: GatsbyConfig = {
         defaultLanguage: `ru`,
         siteUrl: `https://example.com`,
         // if you are using trailingSlash gatsby config include it here, as well (the default is 'always')
-        trailingSlash: "always",
+        trailingSlash: 'always',
         // you can pass any i18next options
         generateDefaultLanguagePage: true,
         i18nextOptions: {
@@ -50,31 +50,26 @@ const config: GatsbyConfig = {
       },
     },
 
-    "gatsby-plugin-decap-cms",
-    "gatsby-plugin-sass",
-    "gatsby-plugin-image",
-    "gatsby-plugin-sitemap",
+    'gatsby-plugin-decap-cms',
+    'gatsby-plugin-sass',
+    'gatsby-plugin-image',
+    'gatsby-plugin-sitemap',
     {
-      resolve: "gatsby-plugin-react-svg",
-      options: {
-        rule: {
-          include: /icons/,
-        },
-      },
+      resolve: 'gatsby-plugin-svgr',
     },
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.
         trackingIds: [
-          "G-H5LX9FD2KY", // Google Analytics / GA
-          "AW-CONVERSION_ID", // Google Ads / Adwords / AW
-          "DC-FLOODIGHT_ID", // Marketing Platform advertising products (Display & Video 360, Search Ads 360, and Campaign Manager)
+          'G-H5LX9FD2KY', // Google Analytics / GA
+          'AW-CONVERSION_ID', // Google Ads / Adwords / AW
+          'DC-FLOODIGHT_ID', // Marketing Platform advertising products (Display & Video 360, Search Ads 360, and Campaign Manager)
         ],
         // This object gets passed directly to the gtag config command
         // This config will be shared across all trackingIds
         gtagConfig: {
-          optimize_id: "OPT_CONTAINER_ID",
+          optimize_id: 'OPT_CONTAINER_ID',
           anonymize_ip: true,
           cookie_expires: 0,
         },
@@ -85,30 +80,30 @@ const config: GatsbyConfig = {
           // Setting this parameter is also optional
           respectDNT: true,
           // Avoids sending pageview hits from custom paths
-          exclude: ["/preview/**", "/do-not-track/me/too/"],
+          exclude: ['/preview/**', '/do-not-track/me/too/'],
           // Defaults to https://www.googletagmanager.com
-          origin: "YOUR_SELF_HOSTED_ORIGIN",
+          origin: 'YOUR_SELF_HOSTED_ORIGIN',
           // Delays processing pageview events on route update (in milliseconds)
           delayOnRouteUpdate: 0,
         },
       },
     },
     {
-      resolve: "gatsby-plugin-manifest",
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: "src/assets/icons/love-lead-logo.svg",
+        icon: 'src/assets/icons/love-lead-logo.svg',
       },
     },
-    "gatsby-transformer-remark",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
+    'gatsby-transformer-remark',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "pages",
-        path: "./src/pages/",
+        name: 'pages',
+        path: './src/pages/',
       },
-      __key: "pages",
+      __key: 'pages',
     },
     {
       resolve: `gatsby-omni-font-loader`,
@@ -148,6 +143,6 @@ const config: GatsbyConfig = {
       },
     },
   ],
-};
+}
 
-export default config;
+export default config

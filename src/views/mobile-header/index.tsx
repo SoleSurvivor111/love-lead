@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import LoveLeadLogoIcon from "@assets/icons/love-lead-logo.svg";
+import { ReactComponent as LoveLeadLogoIcon } from '@assets/icons/love-lead-logo.svg'
+import React, { useState } from 'react'
 
-import * as s from "./styles.module.sass";
-import clsx from "clsx";
-import { LINKS } from "@constants";
-import { useTranslation } from "react-i18next";
+import { LINKS } from '@constants'
+import clsx from 'clsx'
+import { useTranslation } from 'react-i18next'
+import * as s from './styles.module.sass'
 
 export const MobileHeader = () => {
-  const [isOpen, setOpen] = useState(false);
-  const handleClick = () => setOpen(!isOpen);
+  const [isOpen, setOpen] = useState(false)
+  const handleClick = () => setOpen(!isOpen)
 
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   return (
     <header className={s.root}>
@@ -37,7 +37,7 @@ export const MobileHeader = () => {
               onClick={handleClick}
               href={LINKS.courses}
             >
-              {t("начать обучение")}
+              {t('начать обучение')}
             </a>
           </li>
           <li>
@@ -46,12 +46,12 @@ export const MobileHeader = () => {
               onClick={handleClick}
               href={LINKS.tgChannel}
             >
-              {t("tg-канал")}
+              {t('tg-канал')}
             </a>
           </li>
           <li>
             <a className={s.itemLink} onClick={handleClick} href={LINKS.book}>
-              {t("руководство")}
+              {t('руководство')}
             </a>
           </li>
           <li>
@@ -60,11 +60,11 @@ export const MobileHeader = () => {
               onClick={handleClick}
               href={LINKS.loveLeadChat}
             >
-              {t("чат")}
+              {t('чат')}
             </a>
           </li>
         </ul>
       </nav>
     </header>
-  );
-};
+  )
+}
