@@ -1,5 +1,9 @@
 import type { GatsbyConfig } from 'gatsby'
 
+require('dotenv').config({
+  path: `.env`,
+})
+
 const config: GatsbyConfig = {
   pathPrefix: '/love-lead',
   siteMetadata: {
@@ -62,30 +66,47 @@ const config: GatsbyConfig = {
       options: {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.
         trackingIds: [
-          'G-H5LX9FD2KY', // Google Analytics / GA
-          'AW-CONVERSION_ID', // Google Ads / Adwords / AW
-          'DC-FLOODIGHT_ID', // Marketing Platform advertising products (Display & Video 360, Search Ads 360, and Campaign Manager)
+          process.env.GATSBY_GOOGLE_ANALYTICS_ID, // Google Analytics / GA
+          // 'AW-CONVERSION_ID', // Google Ads / Adwords / AW
+          // 'DC-FLOODIGHT_ID', // Marketing Platform advertising products (Display & Video 360, Search Ads 360, and Campaign Manager)
         ],
         // This object gets passed directly to the gtag config command
         // This config will be shared across all trackingIds
         gtagConfig: {
-          optimize_id: 'OPT_CONTAINER_ID',
+          // optimize_id: 'OPT_CONTAINER_ID',
           anonymize_ip: true,
           cookie_expires: 0,
         },
         // This object is used for configuration specific to this plugin
         pluginConfig: {
           // Puts tracking script in the head instead of the body
-          head: false,
+          head: true,
           // Setting this parameter is also optional
           respectDNT: true,
           // Avoids sending pageview hits from custom paths
           exclude: ['/preview/**', '/do-not-track/me/too/'],
-          // Defaults to https://www.googletagmanager.com
-          origin: 'YOUR_SELF_HOSTED_ORIGIN',
+          //  Defaults to https://www.googletagmanager.com
+          // origin: 'https://www.googletagmanager.com',
           // Delays processing pageview events on route update (in milliseconds)
           delayOnRouteUpdate: 0,
         },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-yandex-metrika`,
+      options: {
+        // The ID of yandex metrika.
+        trackingId: process.env.GATSBY_YANDEX_METRIKA_ID,
+        // Enabled a webvisor. The default value is `false`.
+        webvisor: true,
+        // Enables tracking a hash in URL. The default value is `false`.
+        trackHash: true,
+        // Defines where to place the tracking script - `false` means before body (slower loading, more hits)
+        // and `true` means after the body (faster loading, less hits). The default value is `false`.
+        afterBody: true,
+        // Use `defer` attribute of metrika script. If set to `false` - script will be loaded with `async` attribute.
+        // Async enables earlier loading of the metrika but it can negatively affect page loading speed. The default value is `false`.
+        defer: false,
       },
     },
     {
@@ -123,23 +144,6 @@ const config: GatsbyConfig = {
             file: `https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap`,
           },
         ],
-      },
-    },
-    {
-      resolve: `gatsby-plugin-yandex-metrika`,
-      options: {
-        // The ID of yandex metrika.
-        trackingId: process.env.GATSBY_YANDEX_METRIKA_ID,
-        // Enabled a webvisor. The default value is `false`.
-        webvisor: true,
-        // Enables tracking a hash in URL. The default value is `false`.
-        trackHash: true,
-        // Defines where to place the tracking script - `false` means before body (slower loading, more hits)
-        // and `true` means after the body (faster loading, less hits). The default value is `false`.
-        afterBody: true,
-        // Use `defer` attribute of metrika script. If set to `false` - script will be loaded with `async` attribute.
-        // Async enables earlier loading of the metrika but it can negatively affect page loading speed. The default value is `false`.
-        defer: false,
       },
     },
   ],

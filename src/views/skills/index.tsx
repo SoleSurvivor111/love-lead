@@ -21,7 +21,6 @@ export const Skills = () => {
             width: '100%',
             height: '100%',
           }}
-          className={s.bgImg1}
           src="../../assets/images/skills-bg-1.png"
           alt=""
         />
@@ -36,7 +35,6 @@ export const Skills = () => {
             width: '100%',
             height: '100%',
           }}
-          className={s.bgImg2}
           src="../../assets/images/skills-bg-2.png"
           alt=""
         />
